@@ -57,32 +57,33 @@ h4 {
     font-size: 30px;
 }
 .photo-container {
-    display: flex;
-    justify-content: space-between; /* Вирівнювання фото по горизонталі */
-    flex-wrap: wrap; /* Дозволяє фото переноситись на новий рядок */
-    gap: 20px; /* Відстань між фото */
-    margin-top: 20px; /* Відступ зверху */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 стовпців рівної ширини */
+    grid-gap: 10px; /* Відстань між фото */
+    justify-items: center; /* Центрування елементів по горизонталі */
+    margin-top: 20px;
 }
 
+/* Розміщення фото по стовпцях */
 .photo-container figure {
-    text-align: center;
-    margin: 0;
-    width: calc(20% - 16px); /* Ширина кожного фото (5 фото на ряд) */
+    text-align: center; /* Центрування підпису */
 }
 
 .photo-container img {
-    width: 100%;
-    height: auto;
+    width: 180px; /* Ширина фото */
+    height: auto; /* Висота автоматично */
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;
 }
 
 .photo-container img:hover {
-    transform: scale(1.1); /* Збільшується при наведенні */
+    transform: scale(1.1); /* Збільшення фото при наведенні */
 }
 
+/* Опис під фото (по центру) */
 figcaption {
     font-size: 14px;
     color: black;
-    margin-top: 10px;
+    margin-top: 5px; /* Зменшено відступ між фото та підписом */
+    text-align: center; /* Центруємо текст під фото */
 }
